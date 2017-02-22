@@ -1,0 +1,16 @@
+cassandra:
+  image: cassandra
+  ports:
+  - "9042:9042"
+  - "9160:9160"
+  volumes:
+    - ./cassandra-data:/var/lib/cassandra-data
+
+kdb:
+  image: douah/kdb-docker
+
+arctic:
+  image: arctic
+  build:
+    context: .
+    dockerfile: Dockerfile.arctic

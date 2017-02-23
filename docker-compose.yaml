@@ -12,8 +12,9 @@ services:
   kdb:
     image: glens/kdb-ubuntu
 
-  arctic:
-    image: arctic
-    build:
-      context: ./
-      dockerfile: Dockerfile.arctic
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-data:/data/db
